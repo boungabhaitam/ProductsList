@@ -75,7 +75,7 @@ export default class Products extends Component {
                   <div style={{ margin: '20px' }}>
                       <Dropdown options={options} onChange={this._onSelect} value={defaultOption} />
                       </div>
-                      <div style={{ margin: '20px' }}>
+                      <div style={{ margin: '20px' }} >
                           <ReactTable
                               data={this.state.chproducts}
                               columns={COLUMNS}
