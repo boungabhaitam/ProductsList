@@ -6,6 +6,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
+import 'react-table/react-table.css'
 
 export default class Products extends Component {
     constructor(props) {
@@ -32,8 +33,8 @@ export default class Products extends Component {
     _onSelect(value){
         let chosenProducts =this.state.products
         
-        if(value.value!="All"){
-            chosenProducts = chosenProducts.filter(obj => obj.category == value.value);
+        if(value.value!=="All"){
+            chosenProducts = chosenProducts.filter(obj => obj.category === value.value);
             console.log(chosenProducts) 
             console.log(this.state.products)
             
@@ -51,7 +52,7 @@ export default class Products extends Component {
         const options = this.removeDuplicates(allCategories)// removing duplicate categories to construct dropdown options
         options.unshift("All")
           const defaultOption = options[0];
-        if(this.state.loading==true){
+        if(this.state.loading===true){
             return(
                 <div
     style={{
