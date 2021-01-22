@@ -19,7 +19,7 @@ export default class Products extends Component {
     }
     async getProductsData() {
         const res = await axios.get('http://app.getrecall.com:8080/products')
-        this.setState({ loading: false, products: res.data, chproducts: res.data })
+        this.setState({ loading: false, products: res.data.products, chproducts: res.data.products })
     }
     componentDidMount() {
         this.getProductsData()
